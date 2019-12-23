@@ -1,15 +1,18 @@
-// Challenge: Use the chalk library in your project
-
-// 1. Install version 2.4.1 of chalk
-// 2. Load chalk into app.js
-// 3. Use it to print the string "Success" to the console in green
-// 4. Test your work
-
+const yargs = require("yargs");
 const chalk = require("chalk");
+const fs = require("fs");
+
 const log = console.log;
 
-// log(chalk.green("Success"));
-log(chalk.yellow.bold.inverse("line works!..."));
+const command = process.argv[2];
+
+log(process.argv);
+
+if (command === "add") {
+  log("Adding text!");
+} else if (command === "remove") {
+  log("Removing text!");
+}
 
 // const fs = require("fs");
 // fs.writeFileSync("notes.txt", "Created by Nodejs.");
@@ -48,3 +51,15 @@ log(chalk.yellow.bold.inverse("line works!..."));
 // const getNotes = require("./notes");
 // const notes = getNotes();
 // console.log(notes);
+
+// Challenge: Use the chalk library in your project
+
+// 1. Install version 2.4.1 of chalk
+// 2. Load chalk into app.js
+// 3. Use it to print the string "Success" to the console in green
+// 4. Test your work
+
+// const chalk = require("chalk");
+
+// log(chalk.green("Success"));
+// log(chalk.yellow.bold.inverse("line works!..."));
