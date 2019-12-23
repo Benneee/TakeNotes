@@ -1,8 +1,15 @@
-const validator = require("validator");
+// Challenge: Use the chalk library in your project
 
-const getNotes = require("./notes");
-const notes = getNotes();
-console.log(notes);
+// 1. Install version 2.4.1 of chalk
+// 2. Load chalk into app.js
+// 3. Use it to print the string "Success" to the console in green
+// 4. Test your work
+
+const chalk = require("chalk");
+const log = console.log;
+
+// log(chalk.green("Success"));
+log(chalk.yellow.bold.inverse("line works!..."));
 
 // const fs = require("fs");
 // fs.writeFileSync("notes.txt", "Created by Nodejs.");
@@ -33,6 +40,10 @@ console.log(notes);
 // 2. Create getNotes function that returns "Your notes..."
 // 3. Export getNotes function
 // 4. From app.js, load in and call the function printing the message to the console
+
+// const getNotes = require("./notes");
+// const notes = getNotes();
+// console.log(notes);
 
 // const getNotes = require("./notes");
 // const notes = getNotes();
