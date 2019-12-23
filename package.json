@@ -1,0 +1,22 @@
+{
+  "name": "takenotes",
+  "version": "1.0.0",
+  "description": "A simple nodejs app to take notes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benneee/TakeNotes.git"
+  },
+  "author": "Benneee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benneee/TakeNotes/issues"
+  },
+  "homepage": "https://github.com/Benneee/TakeNotes#readme",
+  "dependencies": {
+    "validator": "^10.8.0"
+  }
+}
