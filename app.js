@@ -4,15 +4,49 @@ const fs = require("fs");
 
 const log = console.log;
 
-const command = process.argv[2];
+// Customize yargs version
+yargs.version("1.1.0");
 
-log(process.argv);
+// We will need our notes app to be able to do the following: add, remove, read, list
+// Set up commands
 
-if (command === "add") {
-  log("Adding text!");
-} else if (command === "remove") {
-  log("Removing text!");
-}
+// Create add command
+yargs.command({
+  command: "add",
+  describe: "Add new notes",
+  handler: function() {
+    log("Adding new note...");
+  }
+});
+
+// Create remove command
+yargs.command({
+  command: "remove",
+  describe: "Remove a note",
+  handler: function() {
+    log("Removing the note");
+  }
+});
+
+// Create read command
+yargs.command({
+  command: "read",
+  describe: "Display single note details",
+  handler: function() {
+    log("Displayng note details...");
+  }
+});
+
+// Create list command
+yargs.command({
+  command: "list",
+  describe: "Display all notes",
+  handler: function() {
+    log("Displaying all notes...");
+  }
+});
+
+log(yargs.argv);
 
 // const fs = require("fs");
 // fs.writeFileSync("notes.txt", "Created by Nodejs.");
