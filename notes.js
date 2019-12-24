@@ -3,7 +3,11 @@ const chalk = require("chalk");
 const log = console.log;
 
 const getNotes = () => {
-  return "Your notes...";
+  const notes = loadNotes();
+  log(chalk.blue.inverse.bold("Your Notes..."));
+  notes.forEach(note => {
+    log(chalk.yellow.inverse(note.title));
+  });
 };
 
 const addNote = (title, body) => {

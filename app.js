@@ -72,7 +72,8 @@ yargs.command({
   command: "list",
   describe: "Display all notes",
   handler() {
-    log("Displaying all notes...");
+    // log("Displaying all notes...");
+    notes.getNotes();
   }
 });
 
