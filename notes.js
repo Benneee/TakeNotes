@@ -15,9 +15,14 @@ const addNote = (title, body) => {
   const notes = loadNotes();
 
   // To ensure we do not have duplicate notes
-  const duplicateNotes = notes.filter(note => note.title === title);
 
-  if (duplicateNotes.length === 0) {
+  // Filter looks through every item in the array even after a match is found
+  // const duplicateNotes = notes.filter(note => note.title === title);
+
+  // However, find stops when it finds a match and doesn't look through the other items in the array
+  const duplicateNote = notes.find(note => note.title === title);
+
+  if (!duplicateNote) {
     // Operation to add note
     notes.push({
       title: title,
@@ -44,6 +49,21 @@ const removeNote = title => {
   }
 };
 
+const readNote = title => {
+  // Get all the notes as usual
+  const notes = loadNotes();
+
+  // Search through the notes by title
+  const noteToRead = notes.find(note => note.title === title);
+
+  if (!noteToRead) {
+    log(chalk.red("Note not found, please check your title"));
+  } else {
+    log(chalk.green.inverse(noteToRead.title));
+    log(noteToRead.body);
+  }
+};
+
 // Because we would have to be loading our notes before any operation on them
 const loadNotes = () => {
   try {
@@ -64,5 +84,6 @@ const saveNotes = notes => {
 module.exports = {
   getNotes: getNotes,
   addNote: addNote,
-  removeNote: removeNote
+  removeNote: removeNote,
+  readNote: readNote
 };

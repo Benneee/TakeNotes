@@ -62,8 +62,16 @@ yargs.command({
 yargs.command({
   command: "read",
   describe: "Display single note details",
-  handler() {
-    log("Displayng note details...");
+  builder: {
+    title: {
+      describe: "Note title",
+      demandOption: true,
+      type: "string"
+    }
+  },
+  handler(argv) {
+    // log("Displayng note details...");
+    notes.readNote(argv.title);
   }
 });
 
